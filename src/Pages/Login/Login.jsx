@@ -13,7 +13,7 @@ function Login() {
     const result = await login(data.identifier, data.pin);
     if (result.success) {
         toast.success('Login Successful');
-      navigate('/profile')
+      navigate('/dashboard')
     } else {
         toast.error('Login failed');
     }

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useAuth } from "../providers/AuthProvider";
 
 function ProtectedRoute({ children }) {
-  const { currentUser, loading } = useAuth();
+  const { user, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {
@@ -14,7 +14,7 @@ function ProtectedRoute({ children }) {
       </div>
     );
   }
-  if (!currentUser) {
+  if (!user) {
     return <Navigate to="/login" state={location.pathname}></Navigate>;
   }
   return children;

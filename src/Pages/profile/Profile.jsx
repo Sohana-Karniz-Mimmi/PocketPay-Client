@@ -1,11 +1,10 @@
-import React from "react";
-import { useAuth } from "../../providers/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../AuthProvider/AuthProvider";
 // import { useHistory } from 'react-router-dom';
 
 function Profile() {
-  const { currentUser, logout } = useAuth();
-  console.log(currentUser);
+  const { user, logout } = useAuth();
+  console.log(user);
   //   const history = useHistory(); // Initialize useHistory
   const navigate = useNavigate();
 
@@ -17,10 +16,10 @@ function Profile() {
   return (
     <div>
       <h1>Profile</h1>
-      {currentUser ? (
+      {user ? (
         <>
-          <p>Name: {currentUser.name}</p>
-          <p>Email: {currentUser.email}</p>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
