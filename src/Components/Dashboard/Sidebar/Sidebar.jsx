@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import { GrLogout } from 'react-icons/gr'
-import { FaRegHeart } from "react-icons/fa";
-import { MdOutlineLibraryBooks } from "react-icons/md";
 import { AiOutlineBars } from 'react-icons/ai'
 import { CgProfile } from "react-icons/cg";
+import { MdAddHomeWork } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom'
 // import ToggleBtn from '../../Shared/Button/ToggleBtn'
 import MenuItem from './Menu/MenuItem'
-// import NormalUser from './Menu/NormalUser'
-// import AdminMenu from './Menu/AdminMenu'
-// import Guide from './Menu/Guide'
+import NormalUser from './Menu/NormalUser'
+import AdminMenu from './Menu/AdminMenu'
+import Guide from './Menu/Agent'
 import useRole from './../../../Hook/useRole';
 import { useAuth } from '../../../AuthProvider/AuthProvider';
 
@@ -42,7 +41,7 @@ const Sidebar = () => {
       <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
-            <Link to='/'>
+            <Link to='/dashboard'>
               <h2>PocketPay</h2>
             </Link>
           </div>
@@ -64,7 +63,7 @@ const Sidebar = () => {
         <div>
           <div>
             <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto'>
-              <Link to='/'>
+              <Link to='/dashboard'>
                 <h2>PocketPay</h2>
               </Link>
             </div>
@@ -77,23 +76,19 @@ const Sidebar = () => {
             <nav>
               {/* Statistics */}
               <MenuItem
-                label='My Profile'
+                label='Overview'
                 address='/dashboard'
                 icon={CgProfile}
               />
-              {/* {role.role === 'normal_user' && <NormalUser />}
-              {role.role === 'tour_guide' && <Guide />}
-              {role.role === 'admin' && <AdminMenu />} */}
+              {role.role === 'user' && <NormalUser />}
+              {role.role === 'agent' && <Guide />}
+              {role.role === 'admin' && <AdminMenu />}
               <MenuItem
-                icon={MdOutlineLibraryBooks}
-                label='My Bookings'
+                label='Transactions History'
                 address='blogs'
+                icon={MdAddHomeWork}
               />
-              <MenuItem
-                icon={FaRegHeart}
-                label='My Wishlist'
-                address='wishlist'
-              />
+              
             </nav>
           </div>
         </div>

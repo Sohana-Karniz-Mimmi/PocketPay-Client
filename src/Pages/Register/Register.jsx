@@ -53,23 +53,23 @@ const Register = () => {
     const onSubmit = async (data) => {
         console.log(data);
         try {
-          const response = await axiosPublic.put("/register", data);
-          console.log(response.data); // Log the response data if needed
-          Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: 'Registration successful!',
-          });
-          navigate("/login")
+            const response = await axiosPublic.put("/register", data);
+            console.log(response.data); // Log the response data if needed
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Registration successful!',
+            });
+            navigate("/")
         } catch (error) {
-          console.error("Registration failed:", error);
-          Swal.fire({
-            icon: 'error',
-            title: 'Registration failed',
-            text: 'Please try again later.',
-          });
+            console.error("Registration failed:", error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Registration failed',
+                text: 'Please try again later.',
+            });
         }
-      };
+    };
 
     return (
         <>
@@ -80,6 +80,7 @@ const Register = () => {
             <div className="max-w-md mx-auto mt-10">
                 <h1 className="text-2xl font-bold mb-4">Registration Form</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                    {/* Name */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">
                             Name
@@ -94,26 +95,7 @@ const Register = () => {
                         )}
                     </div>
 
-                    <div>
-                        <label className="block text-sm font-medium text-gray-700">
-                            5-digit PIN
-                        </label>
-                        <input
-                            type="text"
-                            {...register("pin", {
-                                required: "PIN is required",
-                                pattern: {
-                                    value: /^\d{5}$/,
-                                    message: "PIN must be a 5-digit number",
-                                },
-                            })}
-                            className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
-                        />
-                        {errors.pin && (
-                            <p className="text-red-500 text-sm mt-1">{errors.pin.message}</p>
-                        )}
-                    </div>
-
+                    {/* Number */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">
                             Mobile Number
@@ -135,7 +117,7 @@ const Register = () => {
                             <p className="text-red-500 text-sm mt-1">{errors.mobile.message}</p>
                         )}
                     </div>
-
+                    {/* Email */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">
                             Email
@@ -155,6 +137,42 @@ const Register = () => {
                             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                         )}
                     </div>
+
+                    {/* Pin */}
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">
+                            5-digit PIN
+                        </label>
+                        <input
+                            type="text"
+                            {...register("pin", {
+                                required: "PIN is required",
+                                pattern: {
+                                    value: /^\d{5}$/,
+                                    message: "PIN must be a 5-digit number",
+                                },
+                            })}
+                            className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
+                        />
+                        {errors.pin && (
+                            <p className="text-red-500 text-sm mt-1">{errors.pin.message}</p>
+                        )}
+                    </div>
+                    {/* Role */}
+                    <div className="">
+                        <label className="block text-sm font-medium text-gray-700">User Role</label>
+                        <div className="relative">
+                            <select {...register("role", { required: true })} name="role" type="text" required className="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                                <option value="">Select Role...</option>
+                                <option value="User">User</option>
+                                <option value="Agent">Agent</option>
+
+                            </select>
+                            {errors.role && <span className="text-red-500 text-sm mt-1">Please select a role</span>}
+
+                        </div>
+                    </div>
+
 
                     <button
                         type="submit"

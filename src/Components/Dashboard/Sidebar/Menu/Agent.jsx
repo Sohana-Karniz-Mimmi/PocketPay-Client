@@ -6,8 +6,8 @@ const Guide = () => {
     <>
       <MenuItem
         icon={MdOutlineManageHistory}
-        label='My Assigned Tours'
-        address='my-assigned-tours'
+        label='Management'
+        address='management'
       />
     </>
   )
