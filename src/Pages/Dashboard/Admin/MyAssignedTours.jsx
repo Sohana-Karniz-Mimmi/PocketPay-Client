@@ -176,17 +176,6 @@ const MyAssignedTours = () => {
                       <td className='px-4 py-4 text-sm text-gray-500  whitespace-nowrap'>
                         ${assignedTour.price}
                       </td>
-                      {/* <td className='px-4 py-4 text-sm whitespace-nowrap'>
-                        <div className='flex items-center gap-x-2'>
-                          <p
-                            className={`px-3 py-1 rounded-full 
-                            text-xs ${bidRequest.category === 'Web Development' && 'text-blue-500 bg-blue-100/60'} ${bidRequest.category === 'Digital Marketing' && 'text-pink-500 bg-pink-100/60'} ${bidRequest.category === 'Graphics Design' && 'text-emerald-500 bg-emerald-100/60'}
-                            `}
-                          >
-                            {bidRequest.category}
-                          </p>
-                        </div>
-                      </td> */}
                       <td className='px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap'>
                         <div
                           className={`inline-flex items-center px-3 py-1 rounded-full gap-x-2 

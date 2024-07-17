@@ -8,6 +8,7 @@ import Blogs from "../Pages/Blogs";
 import ProtectedRoute from "./PrivetRoute";
 import Profile from "../Pages/profile/Profile";
 import Statistics from "../Pages/Dashboard/Common/Statistics";
+import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
 
 const router = createBrowserRouter([
   
@@ -40,21 +41,11 @@ const router = createBrowserRouter([
         path: "blogs",
         element: <ProtectedRoute><Blogs></Blogs></ProtectedRoute>,
       },
-      // AdminRoute
-      // {
-      //   path: 'profile',
-      //   element: (
-
-      //     // <PrivetRoute>
-      //     //   <AdminRoute>
-
-      //         <Profile />
-
-      //       // </AdminRoute>
-      //     // </PrivetRoute>
-
-      //   ),
-      // }
+      {
+        path: "manage-users",
+        element: <ProtectedRoute><ManageUsers></ManageUsers></ProtectedRoute>,
+      },
+     
       
     ],
   },

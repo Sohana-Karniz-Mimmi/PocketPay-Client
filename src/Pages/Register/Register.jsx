@@ -164,8 +164,8 @@ const Register = () => {
                         <div className="relative">
                             <select {...register("role", { required: true })} name="role" type="text" required className="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                                 <option value="">Select Role...</option>
-                                <option value="User">User</option>
-                                <option value="Agent">Agent</option>
+                                <option value="user">User</option>
+                                <option value="agent">Agent</option>
 
                             </select>
                             {errors.role && <span className="text-red-500 text-sm mt-1">Please select a role</span>}
