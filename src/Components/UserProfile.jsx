@@ -37,7 +37,7 @@ const UserProfile = () => {
                     </div>
                     <div className='!-mt-0.5 pt-2'>
 
-                        <button className='py-1 pt-1.5 px-4 text-xs text-white bg-[#FF0143] rounded-full'> Balance - {userInfo.balance}
+                        <button className='py-1 pt-1.5 px-4 text-xs text-white bg-[#FF0143] rounded-full'> {userInfo.balance} Tk.
                         </button>
                     </div>
                     <div className="!mt-2">

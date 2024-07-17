@@ -4,11 +4,12 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import DashboardLayout from "../Layouts/DashboardLayout";
 // import ErrorPage from "../Pages/ErrorPage/ErrorPage";
-import Blogs from "../Pages/Blogs";
 import ProtectedRoute from "./PrivetRoute";
 import Profile from "../Pages/profile/Profile";
 import Statistics from "../Pages/Dashboard/Common/Statistics";
 import ManageUsers from "../Pages/Dashboard/Admin/ManageUsers";
+import SendMoneyForm from "../Pages/Dashboard/NormalUsers/SendMoneyForm";
+import CashOut from "../Pages/Dashboard/NormalUsers/CashOut";
 
 const router = createBrowserRouter([
   
@@ -37,10 +38,17 @@ const router = createBrowserRouter([
 
         ),
       },
+      
+      // User Route
       {
-        path: "blogs",
-        element: <ProtectedRoute><Blogs></Blogs></ProtectedRoute>,
+        path: "send-money",
+        element: <ProtectedRoute><SendMoneyForm></SendMoneyForm></ProtectedRoute>,
       },
+      {
+        path: "cash-out",
+        element: <ProtectedRoute><CashOut></CashOut></ProtectedRoute>,
+      },
+      // Admin Route
       {
         path: "manage-users",
         element: <ProtectedRoute><ManageUsers></ManageUsers></ProtectedRoute>,

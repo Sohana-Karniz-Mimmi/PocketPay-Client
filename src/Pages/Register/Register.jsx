@@ -102,7 +102,7 @@ const Register = () => {
                         </label>
                         <input
                             type="text"
-                            {...register("mobile", {
+                            {...register("mobile_number", {
                                 required: "Mobile number is required",
                                 pattern: {
                                     value: /^\d{11}$/,
@@ -113,8 +113,8 @@ const Register = () => {
                             })}
                             className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
                         />
-                        {errors.mobile && (
-                            <p className="text-red-500 text-sm mt-1">{errors.mobile.message}</p>
+                        {errors.mobile_number && (
+                            <p className="text-red-500 text-sm mt-1">{errors.mobile_number.message}</p>
                         )}
                     </div>
                     {/* Email */}

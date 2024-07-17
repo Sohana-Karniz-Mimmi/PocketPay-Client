@@ -9,12 +9,12 @@ const NormalUser = () => {
       <MenuItem
         icon={FaRegHeart}
         label='Send Money'
-        address='wishlist'
+        address='send-money'
       />
       <MenuItem
         icon={FaRegHeart}
         label='Cash-Out'
-        address='wishlist'
+        address='cash-out'
       />
       <MenuItem
         icon={FaRegHeart}
